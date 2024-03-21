@@ -1,0 +1,97 @@
+div{
+    width: 500px;
+    height: 500px;
+}
+
+h2{
+    color: white;
+    font-size: 50px;
+    text-align: center;
+    padding-top: 215px;
+}
+
+/* Media queries */
+
+/* Até 420px */
+@media screen and (max-width: 420px) {
+
+    #conteudo {
+        background-color: grey;
+    }
+
+    h2::before{
+        content: "Cinza";
+    }
+}
+
+/* De 421 a 768px */
+@media screen and (min-width: 421px) and (max-width: 768px) {
+
+    #conteudo {
+        background-color: orange;
+    }
+
+    h2::before{
+        content: "Laranja";
+    }
+}
+
+/* De 769 a 1024px */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+
+    #conteudo {
+        background-color: pink;
+    }
+
+    h2::before{
+        content: "Rosa";
+    }
+}
+
+/* De 1025 a 1080px */
+@media screen and (min-width: 1025px) and (max-width: 1080px) {
+
+    #conteudo {
+        background-color: red;
+    }
+
+    h2::before{
+        content: "Vermelho";
+    }
+}
+
+/* De 1081 a 1366px */
+@media screen and (min-width: 1081px) and (max-width: 1366px) {
+
+    #conteudo {
+        background-color: purple;
+    }
+
+    h2::before{
+        content: "Roxo";
+    }
+}
+
+/* De 1367 a 1920px */
+@media screen and (min-width: 1367px) and (max-width: 1920px) {
+
+    #conteudo {
+        background-color: yellow;
+    }
+
+    h2::before{
+        content: "Amarelo";
+    }
+}
+
+/* Acima de 1920px */
+@media screen and (min-width: 1921px) {
+
+    #conteudo {
+        background-color: green;
+    }
+
+    h2::before{
+        content: "Verde";
+    }
+}
