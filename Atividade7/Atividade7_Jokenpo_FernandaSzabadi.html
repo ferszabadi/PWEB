@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jokenpô</title>
+</head>
+
+<body>
+
+    <header>
+        <h1>Jokenpô</h1>
+    </header>
+    <h2>Sobre o jogo</h2>
+    <p>Jokenpo é uma brincadeira japonesa, onde dois jogadores escolhem um dentre três possíveis itens: Pedra, Papel ou
+        Tesoura.</p>
+
+    O objetivo é fazer um juiz de Jokenpo que dada a jogada dos dois jogadores informa o resultado da partida.
+
+    <h2>Regras do jogo</h2>
+    <p>As regras são as seguintes:</p>
+
+    <li>1- Pedra empata com Pedra e ganha de Tesoura;</li>
+    <li>2- Tesoura empata com Tesoura e ganha de Papel;</li>
+    <li>3- Papel empata com Papel e ganha de Pedra.</li>
+
+    <script>
+
+        while(true){
+
+        alert("Bem-vindo ao Jokenpô!");
+        var opcaoUser = prompt("Escolha uma opção: \n\n 1- Pedra\n 2- Papel\n 3- Tesoura\n\n Digite o número: ");
+
+        if (opcaoUser == 1) {
+            var textoUser = "Você escolheu pedra.";
+        } else if (opcaoUser == 2) {
+            var textoUser = "Você escolheu papel.";
+        }
+        else {
+           var textoUser = "Você escolheu tesoura.";
+        }
+
+        var opcaoComput = Math.floor(Math.random(0, 1) * 3 + 1);
+
+        if (opcaoComput == 1) {
+            var textoComput = "O computador escolheu pedra.";
+        } else if (opcaoComput == 2) {
+            var textoComput = "O computador escolheu papel.";
+        }
+        else {
+            var textoComput = "O computador escolheu tesoura.";
+        }
+
+        if (opcaoComput == 1) {
+            if (opcaoUser == 1) {
+                var textoResult = "Pedra x pedra. O resultado foi um empate!";
+            }
+            else if (opcaoUser == 2) {
+                var textoResult = "Pedra x papel. O usuário venceu!";
+            }
+            else if (opcaoUser == 3) {
+                var textoResult = "Pedra x tesoura. O computador venceu!";
+            }
+        }
+
+        if (opcaoComput == 2) {
+            if (opcaoUser == 1) {
+                var textoResult = "Papel x pedra. O computador venceu!";
+            }
+            else if (opcaoUser == 2) {
+                var textoResult = "Papel x papel. O resultado foi um empate!";
+            }
+            else if (opcaoUser == 3) {
+                var textoResult = "Papel x tesoura. O usuário venceu!";
+            }
+        }
+
+        if (opcaoComput == 3) {
+            if (opcaoUser == 1) {
+                var textoResult = "Tesoura x pedra. O usuário venceu!";
+            }
+            else if (opcaoUser == 2) {
+                var textoResult = "Tesoura x papel. O computador venceu!";
+            }
+            else if (opcaoUser == 3) {
+                var textoResult = "Tesoura x tesoura. O resultado foi um empate!";
+            }
+        }
+
+        alert(textoUser + "\n" + textoComput + "\n" + textoResult);
+
+        if(confirm("Iniciar nova partida?")){
+            x = 0;
+        } else{
+            break;
+        }
+
+    }
+
+    </script>
+
+</body>
+
+</html>
