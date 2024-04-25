@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criando Objetos - Atividade 11</title>
+</head>
+
+<body>
+    <script>
+        
+        //Usando Object
+        var funcionario1 = new Object();
+        funcionario1.matricula = "1234";
+        funcionario1.nome = "Giovani";
+        funcionario1.funcao = "Atendente";
+        alert(`Matrícula=${funcionario1.matricula} \nNome=${funcionario1.nome} \nFunção=${funcionario1.funcao}`);
+
+        //Usando {}
+        var funcionario1 = {};
+        funcionario1.matricula = "1234";
+        funcionario1.nome = "Giovani";
+        funcionario1["funcao"] = "Atendente";
+        alert("Matrícula= " + funcionario1.matricula + "\nNome= " + funcionario1.nome + "\nFunção=" + funcionario1.funcao);
+
+        //Literal
+        var funcionario1 = {
+            matricula: "1234",
+            nome: "Giovani",
+            funcao: "Atendente"
+        };
+
+        alert("Matrícula= " + funcionario1.matricula + "\nNome= " + funcionario1.nome + "\nFunção= " + funcionario1.funcao);
+
+    </script>
+</body>
+
+</html>
