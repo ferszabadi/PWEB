@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 14</title>
+</head>
+<body>
+
+    <p id="primeiro"> Digite um texto:</p>
+
+        <input type="text" name="texto" id="texto" value="Digite aqui" size=20>
+	    <br>
+	    <br>
+	    <input type="checkbox" name="maiuscula" id="maiuscula"> Converter para letras maiúsculas
+        <br>
+	    <input type="checkbox" name="miniscula" id="minuscula"> Converter para letras minúsculas
+
+    <script>
+
+    var texto = document.getElementById('texto');
+    var maiusculaCheckbox = document.getElementById('maiuscula');
+    var minusculaCheckbox = document.getElementById('minuscula');
+
+    maiusculaCheckbox.addEventListener('change', () => {
+        if (maiusculaCheckbox.checked) {
+        texto.value = texto.value.toUpperCase();
+        minusculaCheckbox.checked = false;
+        }
+    });
+
+    minusculaCheckbox.addEventListener('change', () => {
+        if (minusculaCheckbox.checked) {
+        texto.value = texto.value.toLowerCase();
+        maiusculaCheckbox.checked = false;
+        }
+    });
+
+    </script>
+
+</body>
+</html>
