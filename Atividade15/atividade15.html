@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 15</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <div class="container">
+
+        <header>
+            <h1>Formulário Principal</h1>
+        </header>
+
+        <form id="formPrincipal">
+
+            <div class="form-group">
+
+                <label for="nome">Nome</label>
+                <input type="text" minlength="10" name="nome" id="nome">
+            </div>
+
+            <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="email" name="email" id="email">
+            </div>
+
+            <div class="form-group">
+                <label for="comentario">Comentário</label>
+                <textarea name="comentario" id="comentario" rows="10"></textarea>
+            </div>
+
+        <div class="form-group">
+            <h2>Pesquisa:</h2>
+
+            <p>Primeira vez nesta página?</p>
+
+                <input type="radio" id="sim" name="opcaoS" value="sim">
+                <label for="sim">Sim</label> 
+
+                <input type="radio" id="nao" name="opcaoN" value="nao">
+                <label for="nao">Não</label>
+        
+        </div>
+
+        <div class="form-group">
+                <button type="submit" onclick="return validarDados();">Enviar</button>
+                <button type="reset">Limpar</button>
+        </div>
+
+        </form>
+
+    </div>
+
+    <script src="atividade15.js"></script>
+
+</body>
+
+</html>
