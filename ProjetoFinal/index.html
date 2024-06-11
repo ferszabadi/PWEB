@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quadro de tarefas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <script src="scripts.js"></script>
+
+    <header>
+        <h1>Quadro de tarefas</h1>
+        <div class="search-container">
+            <input type="text" id="search" placeholder="Search">
+        </div>
+    </header>
+
+    <main class="board">
+        <div class="title">
+            <span>Pendente</span>
+            <button onclick="openTaskModal()">+</button>
+        </div>
+        <div class="title">Em andamento</div>
+        <div class="title">Concluídas</div>
+
+        <div class="column" id="pending" ondrop="drop(event, 'pending')" ondragover="allowDrop(event)">
+            <div class="tasks" id="tasks-pending"></div>
+        </div>
+
+        <div class="column" id="in-progress" ondrop="drop(event, 'in-progress')" ondragover="allowDrop(event)">
+            <div class="tasks" id="tasks-in-progress"></div>
+        </div>
+
+        <div class="column" id="completed" ondrop="drop(event, 'completed')" ondragover="allowDrop(event)">
+            <div class="tasks" id="tasks-completed"></div>
+        </div>
+    </main>
+    <div id="task-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeTaskModal()">&times;</span>
+            <h2 contenteditable="true" id="nameTask">Nome da tarefa</h2>
+            <form id="task-form">
+                <label class="styled-label" for="description">Descrição</label>
+                <textarea id="description"></textarea>
+                <div class="form-columns">
+                    <div class="form-column">
+                        <label class="styled-label" for="responsibles">Responsáveis</label>
+                        <textarea id="responsibles"></textarea>
+                        <label class="styled-label" for="due-date">Prazo</label>
+                        <input type="date" id="due-date">
+                    </div>
+                    <div class="form-column">
+                        <label class="styled-label" for="priority">Prioridade</label>
+                        <select class="styled-select" id="priority" width="100%">
+                            <option value="" disabled selected>Selecione</option>
+                            <option value="low">Baixa</option>
+                            <option value="medium">Média</option>
+                            <option value="high">Alta</option>
+                        </select>
+                        <button type="button" onclick="openDeleteConfirmation(currentTaskIndex)">EXCLUIR</button>
+                    </div>
+                    <div class="form-column">
+                        <label class="styled-label" for="status">Status</label>
+                        <select class="styled-select" id="status">
+                            <option value="" disabled selected>Selecione</option>
+                            <option value="pending">Pendente</option>
+                            <option value="in-progress">Em andamento</option>
+                            <option value="completed">Concluída</option>
+                        </select>
+                        <button type="button" onclick="saveTask()" class="save-button">SALVAR</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div id="delete-confirmation" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeDeleteConfirmation()">&times;</span>
+            <h2 class="atencao">Atenção</h2>
+            <p class="subtitle">Tem certeza que deseja excluir a tarefa?</p>
+            <div>
+                <button class="button-container" onclick="confirmDelete()">CONFIRMAR</button>
+                <button class="button-container" onclick="cancelDelete()">CANCELAR</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
